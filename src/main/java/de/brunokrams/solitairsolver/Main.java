@@ -5,13 +5,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Board>> result = Dfs.calculateAllPathsBetweenBoards(Board.initialPosition(), Board.targetPosition());
-        for (int i = 0; i<result.size(); i++) {
-            System.out.println("\nNow printing path: "  + i);
-            for (Board board: result.get(i)) {
-                System.out.println("\n");
-                System.out.println(board);
-            }
-        }
+        Node<Board> initialNode = new BoardNode(Board.initialPosition());
+        Node<Board> targetNode = new BoardNode(Board.targetPosition());
+        List<Node<Board>> resultingPath = DfsGeneric.findSomePathBetweenNodes(initialNode, targetNode);
+        resultingPath.stream().map(Node::getState).forEach(System.out::println);
     }
+
 }
