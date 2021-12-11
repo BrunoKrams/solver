@@ -1,4 +1,4 @@
-package de.brunokrams.solitairsolver;
+package de.brunokrams.solver.pegsolitair;
 
 public enum Triple {
 

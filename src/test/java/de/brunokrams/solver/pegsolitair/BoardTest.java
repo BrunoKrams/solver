@@ -1,10 +1,10 @@
-package de.brunokrams.solitairsolver;
+package de.brunokrams.solver.pegsolitair;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static de.brunokrams.solitairsolver.BoardTestData.*;
+import static de.brunokrams.solver.pegsolitair.BoardTestData.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BoardTest {

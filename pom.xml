@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>de.brunokrams.solitairsolver.Main</mainClass>
+                            <mainClass>de.brunokrams.solver.pegsolitair.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
