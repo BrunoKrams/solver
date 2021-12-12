@@ -34,7 +34,7 @@ class MultipleRuleTest {
 
     @ParameterizedTest
     @CsvSource({"146, 15", "5747, 144"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfNhoricontal, int valueOfHhoricontal) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int valueOfNhoricontal, int valueOfHhoricontal) {
         // Given
         when(riddle.getValueOfRange(N_HORICONTAL)).thenReturn(valueOfNhoricontal);
         when(riddle.getValueOfRange(H_HORICONTAL)).thenReturn(valueOfHhoricontal);

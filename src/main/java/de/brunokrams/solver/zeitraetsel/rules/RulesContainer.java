@@ -38,6 +38,7 @@ public class RulesContainer {
 
         intermediateList.add(CverticalRule.getInstance());
         intermediateList.add(EverticalRule.getInstance());
+        intermediateList.add(JverticalRule.getInstance());
 
         allRules = Collections.unmodifiableList(intermediateList);
     }

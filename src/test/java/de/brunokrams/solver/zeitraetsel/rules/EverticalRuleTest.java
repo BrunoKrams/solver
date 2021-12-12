@@ -34,7 +34,7 @@ class EverticalRuleTest {
 
     @ParameterizedTest
     @CsvSource({"146, 15", "5747, 144"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int reverseValueOfEvertical, int valueOfShoricontal) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int reverseValueOfEvertical, int valueOfShoricontal) {
         // Given
         when(riddle.getReverseValueOfRange(E_VERTICAL)).thenReturn(reverseValueOfEvertical);
         when(riddle.getValueOfRange(S_HORICONTAL)).thenReturn(valueOfShoricontal);

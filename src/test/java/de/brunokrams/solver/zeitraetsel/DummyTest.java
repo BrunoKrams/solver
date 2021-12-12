@@ -1,22 +1,25 @@
 package de.brunokrams.solver.zeitraetsel;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DummyTest {
 
-    @Test
-    void doSomething() {
-        Integer sample = 234;
-        Integer result = sumDigits(sample);
-        assertEquals(9, result);
+    @ParameterizedTest
+    @CsvSource({"14183, 96", "4876, 1344"})
+    void doSomething(Integer value, Integer crossProduct) {
+        // When
+        Integer result = multiplyDigits(value);
+
+        // Then
+        assertEquals(crossProduct, result);
     }
 
-    public static Integer sumDigits(Integer i) {
-        return i == 0 ? 0 : i % 10 + sumDigits(i / 10);
+    private static Integer multiplyDigits(Integer i) {
+        return i == 0 ? 1 : i % 10 * multiplyDigits(i / 10);
     }
-
 }
 
 

@@ -34,7 +34,7 @@ class GhoricontalRuleTest {
 
     @ParameterizedTest
     @CsvSource({"146, 15", "5747, 4"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfgHoricontal, int reverseValueOfMhoricontal) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int valueOfgHoricontal, int reverseValueOfMhoricontal) {
         // Given
         when(riddle.getValueOfRange(G_HORICONTAL)).thenReturn(valueOfgHoricontal);
         when(riddle.getReverseValueOfRange(M_HORICONTAL)).thenReturn(reverseValueOfMhoricontal);

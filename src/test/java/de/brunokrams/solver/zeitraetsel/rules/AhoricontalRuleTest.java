@@ -34,7 +34,7 @@ class AhoricontalRuleTest {
 
     @ParameterizedTest
     @CsvSource({"484, 984, 702", "5643, 9999, 1000"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfAHoricontal, int valueOfEVertical, int valueOfPhoricontal) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int valueOfAHoricontal, int valueOfEVertical, int valueOfPhoricontal) {
         // Given
         when(riddle.getValueOfRange(A_HORICONTAL)).thenReturn(valueOfAHoricontal);
         when(riddle.getValueOfRange(E_VERTICAL)).thenReturn(valueOfEVertical);

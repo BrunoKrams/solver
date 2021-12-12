@@ -34,7 +34,7 @@ class RhoricontalRuleTest {
 
     @ParameterizedTest
     @CsvSource({"1500, 984, 702", "10047, 9999, 1000"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfRhoricontal, int valueOfJvertical, int valueOfGhoricontal) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int valueOfRhoricontal, int valueOfJvertical, int valueOfGhoricontal) {
         // Given
         when(riddle.getValueOfRange(R_HORICONTAL)).thenReturn(valueOfRhoricontal);
         when(riddle.getValueOfRange(J_VERTICAL)).thenReturn(valueOfJvertical);

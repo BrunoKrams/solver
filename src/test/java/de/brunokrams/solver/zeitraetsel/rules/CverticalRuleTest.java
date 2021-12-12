@@ -34,7 +34,7 @@ class CverticalRuleTest {
 
     @ParameterizedTest
     @CsvSource({"650000, 984, 702", "9999001, 9999, 1000"})
-    void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfCvertical, int valueOfIhoricontal, int valueOJvertical) {
+    void apply_returnsFalseWhenRuleIsNotSatisfied(int valueOfCvertical, int valueOfIhoricontal, int valueOJvertical) {
         // Given
         when(riddle.getValueOfRange(C_VERTICAL)).thenReturn(valueOfCvertical);
         when(riddle.getValueOfRange(I_HORICONTAL)).thenReturn(valueOfIhoricontal);
