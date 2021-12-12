@@ -30,7 +30,7 @@ public enum Range {
     Q_VERTICAL(List.of(CELL_4_5, CELL_5_5));
 
 
-    private List<Cell> cells;
+    private final List<Cell> cells;
 
     Range(List<Cell> cells) {
         this.cells = cells;

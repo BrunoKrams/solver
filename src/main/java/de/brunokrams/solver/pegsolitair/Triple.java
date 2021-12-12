@@ -79,9 +79,9 @@ public enum Triple {
     TRIPLE_32_29_24(32, 29, 24),
     TRIPLE_32_31_30(32, 31, 30);
 
-    private int firstCell;
-    private int middleCell;
-    private int lastCell;
+    private final int firstCell;
+    private final int middleCell;
+    private final int lastCell;
 
     Triple(int firstCell, int middleCell, int lastCell) {
         this.firstCell = firstCell;

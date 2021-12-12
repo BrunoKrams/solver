@@ -86,7 +86,6 @@ public class Riddle {
         return RulesContainer.getAllRules().stream().filter(rule -> completedRanges.containsAll(rule.getAffectedRanges())).collect(Collectors.toList());
     }
 
-
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

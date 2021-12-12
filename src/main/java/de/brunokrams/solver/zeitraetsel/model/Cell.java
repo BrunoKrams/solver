@@ -38,9 +38,9 @@ public enum Cell {
     CELL_5_4(34, 5, 4),
     CELL_5_5(35, 5, 5);
 
-    private int index;
-    private int row;
-    private int column;
+    private final int index;
+    private final int row;
+    private final int column;
 
     Cell(int index, int row, int column) {
         this.index = index;

@@ -30,6 +30,15 @@ public class RulesContainer {
         intermediateList.add(new SquareRule(M_VERTICAL));
         intermediateList.add(new SquareRule(O_VERTICAL));
 
+        intermediateList.add(AhoricontalRule.getInstance());
+        intermediateList.add(GhoricontalRule.getInstance());
+        intermediateList.add(NhoricontalRule.getInstance());
+        intermediateList.add(PhoricontalRule.getInstance());
+        intermediateList.add(RhoricontalRule.getInstance());
+
+        intermediateList.add(CverticalRule.getInstance());
+        intermediateList.add(EverticalRule.getInstance());
+
         allRules = Collections.unmodifiableList(intermediateList);
     }
 
