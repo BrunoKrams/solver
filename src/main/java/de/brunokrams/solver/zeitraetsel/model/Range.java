@@ -1,8 +1,8 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.model;
 
 import java.util.List;
 
-import static de.brunokrams.solver.zeitraetsel.Cell.*;
+import static de.brunokrams.solver.zeitraetsel.model.Cell.*;
 
 public enum Range {
 

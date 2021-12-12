@@ -1,4 +1,4 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.model;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;

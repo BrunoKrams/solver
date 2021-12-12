@@ -1,4 +1,4 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.model;
 
 import org.junit.jupiter.api.Test;
 

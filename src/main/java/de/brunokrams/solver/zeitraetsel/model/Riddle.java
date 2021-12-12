@@ -1,4 +1,7 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.model;
+
+import de.brunokrams.solver.zeitraetsel.rules.Rule;
+import de.brunokrams.solver.zeitraetsel.rules.RulesContainer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,24 +46,17 @@ public class Riddle {
     }
 
     private boolean isValid() {
-        Cell lastSetCell = getLastSetCell();
-        if (lastSetCell == null) {
+        if (values.size() == 0) {
             return true;
         }
         return getApplicableRules().stream().allMatch(rule -> rule.apply(this));
     }
 
     private List<Rule> getApplicableRules() {
-        // TODO implement
-        return null;
+        List<Range> completedRanges = CompletedRanges.getCumulatedCompletedRangesByCellIndex(values.size() - 1);
+        return RulesContainer.getAllRules().stream().filter(rule -> completedRanges.containsAll(rule.getAffectedRanges())).collect(Collectors.toList());
     }
 
-    private Cell getLastSetCell() {
-        if (values.isEmpty()) {
-            return null;
-        }
-        return Cell.values()[values.size() - 1];
-    }
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.model;
 
 public enum Cell {
     CELL_0_0(0, 0, 0),

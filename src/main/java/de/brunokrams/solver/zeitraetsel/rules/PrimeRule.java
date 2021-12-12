@@ -1,4 +1,7 @@
-package de.brunokrams.solver.zeitraetsel;
+package de.brunokrams.solver.zeitraetsel.rules;
+
+import de.brunokrams.solver.zeitraetsel.model.Range;
+import de.brunokrams.solver.zeitraetsel.model.Riddle;
 
 import java.util.List;
 
@@ -20,7 +23,7 @@ public class PrimeRule implements Rule {
     }
 
     @Override
-    public List<Range> affectedRanges() {
+    public List<Range> getAffectedRanges() {
         return List.of(range);
     }
 }
