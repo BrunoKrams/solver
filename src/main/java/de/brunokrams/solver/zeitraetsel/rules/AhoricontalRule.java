@@ -23,9 +23,9 @@ public class AhoricontalRule implements Rule {
 
     @Override
     public boolean apply(Riddle riddle) {
-        int valueOfAhoricontal = riddle.getValueOf(A_HORICONTAL);
-        int valueOfEvertical = riddle.getValueOf(E_VERTICAL);
-        int valueOfPhoricontal = riddle.getValueOf(P_HORICONTAL);
+        int valueOfAhoricontal = riddle.getValueOfRange(A_HORICONTAL);
+        int valueOfEvertical = riddle.getValueOfRange(E_VERTICAL);
+        int valueOfPhoricontal = riddle.getValueOfRange(P_HORICONTAL);
 
         return valueOfAhoricontal == valueOfEvertical - valueOfPhoricontal;
     }

@@ -29,9 +29,38 @@ public class Riddle {
         return getAllSuccessors().stream().filter(Riddle::isValid).collect(Collectors.toList());
     }
 
-    public Integer getValueOf(Range range) {
-        // Todo implement
-        return null;
+    public Integer getValueOfRange(Range range) {
+        List<Integer> digits = getDigitsOfRange(range);
+        int result = 0;
+        int power = 1;
+        for (int i = digits.size() - 1; i >= 0; i--) {
+            Integer digit = digits.get(i);
+            if (digit == null) {
+                return null;
+            }
+            result += digit * power;
+            power *= 10;
+        }
+        return result;
+    }
+
+    public Integer getReverseValueOfRange(Range range) {
+        List<Integer> digits = getDigitsOfRange(range);
+        int result = 0;
+        int power = 1;
+        for (int i = 0; i < digits.size(); i++) {
+            Integer digit = digits.get(i);
+            if (digit == null) {
+                return null;
+            }
+            result += digit * power;
+            power *= 10;
+        }
+        return result;
+    }
+
+    private List<Integer> getDigitsOfRange(Range range) {
+        return range.getCells().stream().map(cell -> cell.getIndex() < values.size() ? values.get(cell.getIndex()) : null).collect(Collectors.toList());
     }
 
     private List<Riddle> getAllSuccessors() {

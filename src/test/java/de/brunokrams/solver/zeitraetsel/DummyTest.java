@@ -2,13 +2,21 @@ package de.brunokrams.solver.zeitraetsel;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DummyTest {
 
     @Test
     void doSomething() {
-        for (int i = 10; i < 32; i++) {
-            System.out.print(i * i + ", ");
-        }
+        Integer sample = 234;
+        Integer result = sumDigits(sample);
+        assertEquals(9, result);
+    }
+
+    public static Integer sumDigits(Integer i) {
+        return i == 0 ? 0 : i % 10 + sumDigits(i / 10);
     }
 
 }
+
+

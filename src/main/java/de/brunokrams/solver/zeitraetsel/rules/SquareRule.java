@@ -19,7 +19,7 @@ public class SquareRule implements Rule {
 
     @Override
     public boolean apply(Riddle riddle) {
-        return squaresBetween100And999.contains(riddle.getValueOf(range));
+        return squaresBetween100And999.contains(riddle.getValueOfRange(range));
     }
 
     @Override

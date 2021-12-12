@@ -27,7 +27,7 @@ class PrimeRuleTest {
     @ValueSource(ints = {2, 17, 31, 97})
     void apply_ReturnsTrue_whenValueIsPrime(int value) {
         // Given
-        when(riddle.getValueOf(any(Range.class))).thenReturn(value);
+        when(riddle.getValueOfRange(any(Range.class))).thenReturn(value);
 
         // When
         boolean result = primeRule.apply(riddle);
@@ -40,7 +40,7 @@ class PrimeRuleTest {
     @ValueSource(ints = {4, 18, 66, 91})
     void apply_ReturnsFalse_whenValueIsComposite(int value) {
         // Given
-        when(riddle.getValueOf(any(Range.class))).thenReturn(value);
+        when(riddle.getValueOfRange(any(Range.class))).thenReturn(value);
 
         // When
         boolean result = primeRule.apply(riddle);

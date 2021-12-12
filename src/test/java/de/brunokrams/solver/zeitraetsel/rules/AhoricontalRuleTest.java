@@ -20,9 +20,9 @@ class AhoricontalRuleTest {
     @CsvSource({"202, 584, 382", "812, 5976,5164"})
     void apply_returnsTrueWhenRuleIsSatisfied(int valueOfAHoricontal, int valueOfEVertical, int valueOfPhoricontal) {
         // Given
-        when(riddle.getValueOf(A_HORICONTAL)).thenReturn(valueOfAHoricontal);
-        when(riddle.getValueOf(E_VERTICAL)).thenReturn(valueOfEVertical);
-        when(riddle.getValueOf(P_HORICONTAL)).thenReturn(valueOfPhoricontal);
+        when(riddle.getValueOfRange(A_HORICONTAL)).thenReturn(valueOfAHoricontal);
+        when(riddle.getValueOfRange(E_VERTICAL)).thenReturn(valueOfEVertical);
+        when(riddle.getValueOfRange(P_HORICONTAL)).thenReturn(valueOfPhoricontal);
 
         // When
         boolean result = aHoricontalRule.apply(riddle);
@@ -36,9 +36,9 @@ class AhoricontalRuleTest {
     @CsvSource({"484, 984, 702", "5643, 9999, 1000"})
     void apply_returnsTrueWhenRuleIsNotSatisfied(int valueOfAHoricontal, int valueOfEVertical, int valueOfPhoricontal) {
         // Given
-        when(riddle.getValueOf(A_HORICONTAL)).thenReturn(valueOfAHoricontal);
-        when(riddle.getValueOf(E_VERTICAL)).thenReturn(valueOfEVertical);
-        when(riddle.getValueOf(P_HORICONTAL)).thenReturn(valueOfPhoricontal);
+        when(riddle.getValueOfRange(A_HORICONTAL)).thenReturn(valueOfAHoricontal);
+        when(riddle.getValueOfRange(E_VERTICAL)).thenReturn(valueOfEVertical);
+        when(riddle.getValueOfRange(P_HORICONTAL)).thenReturn(valueOfPhoricontal);
 
         // When
         boolean result = aHoricontalRule.apply(riddle);

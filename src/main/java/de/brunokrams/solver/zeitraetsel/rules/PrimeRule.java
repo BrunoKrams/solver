@@ -19,7 +19,7 @@ public class PrimeRule implements Rule {
 
     @Override
     public boolean apply(Riddle riddle) {
-        return primesUpTo100.contains(riddle.getValueOf(range));
+        return primesUpTo100.contains(riddle.getValueOfRange(range));
     }
 
     @Override

@@ -27,7 +27,7 @@ class SquareRuleTest {
     @ValueSource(ints = {121, 400, 729})
     void apply_ReturnsTrue_whenValueIsPerfectSquare(int value) {
         // Given
-        when(riddle.getValueOf(any(Range.class))).thenReturn(value);
+        when(riddle.getValueOfRange(any(Range.class))).thenReturn(value);
 
         // When
         boolean result = squareRule.apply(riddle);
@@ -40,7 +40,7 @@ class SquareRuleTest {
     @ValueSource(ints = {101, 133, 758})
     void apply_ReturnsFalse_whenValueIsNoPerfectSquare(int value) {
         // Given
-        when(riddle.getValueOf(any(Range.class))).thenReturn(value);
+        when(riddle.getValueOfRange(any(Range.class))).thenReturn(value);
 
         // When
         boolean result = squareRule.apply(riddle);
