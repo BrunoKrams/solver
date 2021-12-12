@@ -1,0 +1,2 @@
+-Liste von Integern statt Array -> Alle unausgefüllten verbrauchen keinen Speicher
+-Completed Ranges übergeben und ergänzen, statt immer neu ermitteln
