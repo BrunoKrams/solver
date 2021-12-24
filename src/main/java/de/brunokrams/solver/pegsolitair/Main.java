@@ -1,5 +1,8 @@
 package de.brunokrams.solver.pegsolitair;
 
+import de.brunokrams.solver.Dfs;
+import de.brunokrams.solver.Node;
+
 import java.util.List;
 
 public class Main {

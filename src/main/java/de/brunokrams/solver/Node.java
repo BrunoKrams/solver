@@ -1,4 +1,4 @@
-package de.brunokrams.solver.pegsolitair;
+package de.brunokrams.solver;
 
 import java.util.List;
 import java.util.Objects;
