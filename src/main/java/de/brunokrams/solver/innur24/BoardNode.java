@@ -1,4 +1,5 @@
-package de.brunokrams.solver.pegsolitair;
+package de.brunokrams.solver.innur24;
+
 
 import de.brunokrams.solver.Node;
 
@@ -15,4 +16,5 @@ public class BoardNode extends Node<Board> {
     public List<Node<Board>> getAdjacentNodes() {
         return getState().getSuccessors().stream().map(BoardNode::new).collect(Collectors.toList());
     }
+
 }

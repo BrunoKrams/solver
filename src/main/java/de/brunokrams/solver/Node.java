@@ -7,11 +7,13 @@ public abstract class Node<T> {
 
     private T state;
 
+    private Node predecessor;
+
     public Node(T state) {
         this.state = state;
     }
 
-    public abstract List<Node<T>> getSuccessors();
+    public abstract List<Node<T>> getAdjacentNodes();
 
     public T getState() {
         return state;
@@ -25,4 +27,11 @@ public abstract class Node<T> {
         return Objects.equals(state, node.state);
     }
 
+    public Node getPredecessor() {
+        return predecessor;
+    }
+
+    public void setPredecessor(Node predecessor) {
+        this.predecessor = predecessor;
+    }
 }
