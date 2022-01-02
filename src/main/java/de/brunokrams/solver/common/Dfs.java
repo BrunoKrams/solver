@@ -1,4 +1,4 @@
-package de.brunokrams.solver;
+package de.brunokrams.solver.common;
 
 
 import java.util.ArrayList;

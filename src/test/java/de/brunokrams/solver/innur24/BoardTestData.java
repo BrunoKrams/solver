@@ -1,81 +1,77 @@
 package de.brunokrams.solver.innur24;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-
 import static de.brunokrams.solver.innur24.State.*;
 
 public class BoardTestData {
 
-    public static final Board BOARD_AFTER_MOVE_0_3_5 = createBoardAfterMove035();
-    public static final Board BOARD_AFTER_MOVE_2_3_4 = createBoardAfterMove234();
-    public static final Board BOARD_AFTER_MOVE_7_6_5 = createBoardAfterMove765();
-    public static final Board BOARD_AFTER_MOVE_9_6_4 = createBoardAfterMove964();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_035 = createBoardAfterMove035();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_234 = createBoardAfterMove234();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_765 = createBoardAfterMove765();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_964 = createBoardAfterMove964();
 
-    public static final Board BOARD_AFTER_MOVE_3_4 = createBoardAfterMove34();
-    public static final Board BOARD_AFTER_MOVE_3_5 = createBoardAfterMove35();
-    public static final Board BOARD_AFTER_MOVE_6_4 = createBoardAfterMove64();
-    public static final Board BOARD_AFTER_MOVE_6_5 = createBoardAfterMove65();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_34 = createBoardAfterMove34();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_35 = createBoardAfterMove35();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_64 = createBoardAfterMove64();
+    public static final Innur24Board INNUR_24_BOARD_AFTER_MOVE_65 = createBoardAfterMove65();
 
-    public static final Board[] BOARD_POSITIONS_AFTER_FIRST_MOVE = {
-            BOARD_AFTER_MOVE_0_3_5, BOARD_AFTER_MOVE_2_3_4, BOARD_AFTER_MOVE_7_6_5, BOARD_AFTER_MOVE_9_6_4,
-            BOARD_AFTER_MOVE_3_4, BOARD_AFTER_MOVE_3_5, BOARD_AFTER_MOVE_6_4, BOARD_AFTER_MOVE_6_5};
+    public static final Innur24Board[] INNUR_24_BOARD_POSITIONS_AFTER_FIRST_MOVE = {
+            INNUR_24_BOARD_AFTER_MOVE_035, INNUR_24_BOARD_AFTER_MOVE_234, INNUR_24_BOARD_AFTER_MOVE_765, INNUR_24_BOARD_AFTER_MOVE_964,
+            INNUR_24_BOARD_AFTER_MOVE_34, INNUR_24_BOARD_AFTER_MOVE_35, INNUR_24_BOARD_AFTER_MOVE_64, INNUR_24_BOARD_AFTER_MOVE_65};
 
-    private static Board createBoardAfterMove035() {
+    private static Innur24Board createBoardAfterMove035() {
         State[] cells = createCellsOfInitialState();
         cells[0] = EMPTY;
         cells[5] = WHITE;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove234() {
+    private static Innur24Board createBoardAfterMove234() {
         State[] cells = createCellsOfInitialState();
         cells[2] = EMPTY;
         cells[4] = WHITE;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove765() {
+    private static Innur24Board createBoardAfterMove765() {
         State[] cells = createCellsOfInitialState();
         cells[5] = BLACK;
         cells[7] = EMPTY;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove964() {
+    private static Innur24Board createBoardAfterMove964() {
         State[] cells = createCellsOfInitialState();
         cells[4] = BLACK;
         cells[9] = EMPTY;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove34() {
+    private static Innur24Board createBoardAfterMove34() {
         State[] cells = createCellsOfInitialState();
         cells[3] = EMPTY;
         cells[4] = WHITE;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove35() {
+    private static Innur24Board createBoardAfterMove35() {
         State[] cells = createCellsOfInitialState();
         cells[3] = EMPTY;
         cells[5] = WHITE;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove64() {
+    private static Innur24Board createBoardAfterMove64() {
         State[] cells = createCellsOfInitialState();
         cells[4] = BLACK;
         cells[6] = EMPTY;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    private static Board createBoardAfterMove65() {
+    private static Innur24Board createBoardAfterMove65() {
         State[] cells = createCellsOfInitialState();
         cells[5] = BLACK;
         cells[6] = EMPTY;
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
     private static State[] createCellsOfInitialState() {

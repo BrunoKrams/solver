@@ -5,27 +5,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Board {
+public class PegSolitairBoard {
     private boolean[] cells;
 
-    public Board(boolean[] cells) {
+    public PegSolitairBoard(boolean[] cells) {
         this.cells = cells;
     }
 
-    public static Board initialPosition() {
+    public static PegSolitairBoard initialPosition() {
         boolean[] cells = new boolean[33];
         Arrays.fill(cells, true);
         cells[16] = false;
-        return new Board(cells);
+        return new PegSolitairBoard(cells);
     }
 
-    public static Board targetPosition() {
+    public static PegSolitairBoard targetPosition() {
         boolean[] cells = new boolean[33];
         cells[16] = true;
-        return new Board(cells);
+        return new PegSolitairBoard(cells);
     }
 
-    public List<Board> getSuccessors() {
+    public List<PegSolitairBoard> getSuccessors() {
         return getMovableTriples().stream().map(this::performMoveOnTriple).collect(Collectors.toList());
     }
 
@@ -37,12 +37,12 @@ public class Board {
         return cells[triple.getFirstCell()] && cells[triple.getMiddleCell()] && !cells[triple.getLastCell()];
     }
 
-    private Board performMoveOnTriple(Triple triple) {
+    private PegSolitairBoard performMoveOnTriple(Triple triple) {
         boolean[] newCells = cells.clone();
         newCells[triple.getFirstCell()] = false;
         newCells[triple.getMiddleCell()] = false;
         newCells[triple.getLastCell()] = true;
-        return new Board(newCells);
+        return new PegSolitairBoard(newCells);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Board {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Board board = (Board) o;
+        PegSolitairBoard board = (PegSolitairBoard) o;
         return Arrays.equals(cells, board.cells);
     }
 

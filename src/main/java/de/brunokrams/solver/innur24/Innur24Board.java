@@ -7,14 +7,14 @@ import java.util.stream.Collectors;
 
 import static de.brunokrams.solver.innur24.State.*;
 
-public class Board {
+public class Innur24Board {
     private State[] cells;
 
-    public Board(State[] cells) {
+    public Innur24Board(State[] cells) {
         this.cells = cells;
     }
 
-    public static Board initialPosition() {
+    public static Innur24Board initialPosition() {
         State[] cells = new State[10];
 
         for (int i = 0; i<= 3;i++) {
@@ -28,10 +28,10 @@ public class Board {
             cells[i] = BLACK;
         }
 
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    public static Board targetPosition() {
+    public static Innur24Board targetPosition() {
         State[] cells = new State[10];
 
         for (int i = 0; i<= 3;i++) {
@@ -45,11 +45,11 @@ public class Board {
             cells[i] = WHITE;
         }
 
-        return new Board(cells);
+        return new Innur24Board(cells);
     }
 
-    public List<Board> getSuccessors() {
-        List<Board> result = new ArrayList<>();
+    public List<Innur24Board> getSuccessors() {
+        List<Innur24Board> result = new ArrayList<>();
         result.addAll(getMovableTriples().stream().map(this::performMoveOnTriple).collect(Collectors.toList()));
         result.addAll(getMovableDobles().stream().map(this::performMoveOnDoble).collect(Collectors.toList()));
         return result;
@@ -68,11 +68,11 @@ public class Board {
         return Arrays.stream(Triple.values()).filter(this::isMovable).collect(Collectors.toList());
     }
 
-    private Board performMoveOnDoble(Doble doble) {
+    private Innur24Board performMoveOnDoble(Doble doble) {
         State[] newCells = cells.clone();
         newCells[doble.getFirstCell()] = EMPTY;
         newCells[doble.getLastCell()] = cells[doble.getFirstCell()];
-        return new Board(newCells);
+        return new Innur24Board(newCells);
     }
 
     private boolean isMovable(Triple triple) {
@@ -81,11 +81,11 @@ public class Board {
         cells[triple.getLastCell()] == EMPTY;
     }
 
-    private Board performMoveOnTriple(Triple triple) {
+    private Innur24Board performMoveOnTriple(Triple triple) {
         State[] newCells = cells.clone();
         newCells[triple.getFirstCell()] = EMPTY;
         newCells[triple.getLastCell()] = cells[triple.getFirstCell()];
-        return new Board(newCells);
+        return new Innur24Board(newCells);
     }
 
     @Override
@@ -138,8 +138,8 @@ public class Board {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Board board = (Board) o;
-        return Arrays.equals(cells, board.cells);
+        Innur24Board innur24Board = (Innur24Board) o;
+        return Arrays.equals(cells, innur24Board.cells);
     }
 
     @Override

@@ -7,19 +7,19 @@ import java.util.List;
 import static de.brunokrams.solver.pegsolitair.BoardTestData.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BoardTest {
+public class PegSolitairBoardTest {
 
     @Test
     void getSuccessors_returnsTheExpectedFour_whenCalledOnInitialBoard() {
         // Given
-        Board initialBoard = Board.initialPosition();
+        PegSolitairBoard initialBoard = PegSolitairBoard.initialPosition();
 
         // When
-        List<Board> successors = initialBoard.getSuccessors();
+        List<PegSolitairBoard> successors = initialBoard.getSuccessors();
 
         // Then
         assertThat(successors.size()).isEqualTo(4);
-        assertThat(successors).contains(BOARD_AFTER_MOVE_4_9_16, BOARD_AFTER_MOVE_14_15_16, BOARD_AFTER_MOVE_18_17_16, BOARD_AFTER_MOVE_28_23_16);
+        assertThat(successors).contains(pegSolitairBoardAfterMove4916, pegSolitairBoardAfterMove141516, pegSolitairBoardAfterMove181716, pegSolitairBoardAfterMove282316);
     }
 
 }

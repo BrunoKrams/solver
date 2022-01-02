@@ -2,31 +2,30 @@ package de.brunokrams.solver.innur24;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static de.brunokrams.solver.innur24.BoardTestData.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class BoardTest {
+public class Innur24BoardTest {
 
     @Test
     void getSuccessors_returnsTheExpected8_whenCalledOnInitialBoard() {
         // Given
-        Board initialBoard = Board.initialPosition();
+        Innur24Board initialInnur24Board = Innur24Board.initialPosition();
 
         // When
-        List<Board> successors = initialBoard.getSuccessors();
+        List<Innur24Board> successors = initialInnur24Board.getSuccessors();
 
         // Then
         assertThat(successors.size()).isEqualTo(8);
-        assertThat(successors).contains(BOARD_POSITIONS_AFTER_FIRST_MOVE);
+        assertThat(successors).contains(INNUR_24_BOARD_POSITIONS_AFTER_FIRST_MOVE);
     }
 
     @Test
     void getMovableTriples() {
         // When
-        List<Triple> movableTriples = Board.initialPosition().getMovableTriples();
+        List<Triple> movableTriples = Innur24Board.initialPosition().getMovableTriples();
 
         // Then
         assertThat(movableTriples.size()).isEqualTo(4);
@@ -36,7 +35,7 @@ public class BoardTest {
     @Test
     void getMovableDobles() {
         // When
-        List<Doble> movableDobles = Board.initialPosition().getMovableDobles();
+        List<Doble> movableDobles = Innur24Board.initialPosition().getMovableDobles();
 
         // Then
         assertThat(movableDobles.size()).isEqualTo(4);
