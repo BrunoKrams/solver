@@ -1,6 +1,5 @@
 package de.brunokrams.solver.kidssudoku;
 
-import de.brunokrams.solver.sudoku.Sudoku;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

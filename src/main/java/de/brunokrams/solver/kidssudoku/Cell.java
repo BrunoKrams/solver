@@ -1,4 +1,4 @@
-package de.brunokrams.solver.sudoku;
+package de.brunokrams.solver.kidssudoku;
 
 public class Cell {
 

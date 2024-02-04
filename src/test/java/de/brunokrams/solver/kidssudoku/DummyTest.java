@@ -2,8 +2,6 @@ package de.brunokrams.solver.kidssudoku;
 
 import de.brunokrams.solver.common.Dfs;
 import de.brunokrams.solver.common.Node;
-import de.brunokrams.solver.sudoku.Sudoku;
-import de.brunokrams.solver.sudoku.KidsSudokuNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

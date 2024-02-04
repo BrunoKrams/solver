@@ -1,4 +1,4 @@
-package de.brunokrams.solver.sudoku;
+package de.brunokrams.solver.kidssudoku;
 
 import java.util.HashSet;
 import java.util.List;
