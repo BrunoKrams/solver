@@ -1,5 +1,6 @@
 package de.brunokrams.solver.kidssudoku;
 
+import de.brunokrams.solver.sudoku.Sudoku;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,13 +15,13 @@ class KidsSudokuTest {
         testMatrix[1][0] = 2;
 
         // when/then
-        assertThrows(IllegalArgumentException.class, () -> KidsSudoku.createFromMatrix(testMatrix));
+        assertThrows(IllegalArgumentException.class, () -> Sudoku.createFromMatrix(testMatrix));
     }
 
     @Test
     void isValid_returnsTrue_whenSudokuIsCreatedWithValidMatrix() {
         // given
-        KidsSudoku kidsSudoku = KidsSudoku.createFromMatrix(TestDataProvider.validSudoku());
+        Sudoku kidsSudoku = Sudoku.createFromMatrix(TestDataProvider.validSudoku());
 
         // when
         boolean isValid = kidsSudoku.isValid();
@@ -32,7 +33,7 @@ class KidsSudokuTest {
     @Test
     void isValid_returnsFalse_whenSudokuIsCreatedWithInvalidMatrix() {
         // given
-        KidsSudoku kidsSudoku = KidsSudoku.createFromMatrix(TestDataProvider.invalidSudoku());
+        Sudoku kidsSudoku = Sudoku.createFromMatrix(TestDataProvider.invalidSudoku());
 
         // when
         boolean isValid = kidsSudoku.isValid();
@@ -40,5 +41,7 @@ class KidsSudokuTest {
         // then
         assertThat(isValid).isFalse();
     }
+
+
 
 }

@@ -4,9 +4,34 @@ package de.brunokrams.solver.common;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Dfs {
+
+    public static <T> List<Node<T>> findAllFinalNodes(Node<T> start, Predicate<T> isFinal) {
+        List<Node<T>> finalNodes = new ArrayList<>();
+
+        Stack<Node<T>> toBeVisited = new Stack<>();
+        List<Node<T>> visited = new ArrayList<>();
+
+        toBeVisited.push(start);
+
+        while (!toBeVisited.isEmpty()) {
+            Node<T> current = toBeVisited.pop();
+            visited.add(current);
+
+            if (isFinal.test(current.getState())) {
+                finalNodes.add(current);
+            }
+            List<Node<T>> nonVisitedChildren = current.getAdjacentNodes().stream().filter(child -> !visited.contains(child)).collect(Collectors.toList());
+
+            if (!nonVisitedChildren.isEmpty()) {
+                nonVisitedChildren.forEach(child-> {child.setPredecessor(current); toBeVisited.push(child);});
+            }
+        }
+        return finalNodes;
+    }
 
     public static <T> List<Node<T>> findSomePathBetweenNodes(Node<T> start, Node<T> target) {
         Stack<Node<T>> toBeVisited = new Stack<>();

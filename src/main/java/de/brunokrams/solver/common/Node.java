@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public abstract class Node<T> {
 
-    private T state;
+    private final T state;
 
-    private Node predecessor;
+    private Node<T> predecessor;
 
     public Node(T state) {
         this.state = state;
@@ -27,11 +27,11 @@ public abstract class Node<T> {
         return Objects.equals(state, node.state);
     }
 
-    public Node getPredecessor() {
+    public Node<T> getPredecessor() {
         return predecessor;
     }
 
-    public void setPredecessor(Node predecessor) {
+    public void setPredecessor(Node<T> predecessor) {
         this.predecessor = predecessor;
     }
 }

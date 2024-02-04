@@ -1,5 +1,7 @@
 package de.brunokrams.solver.kidssudoku;
 
+import de.brunokrams.solver.sudoku.Area;
+import de.brunokrams.solver.sudoku.Cell;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
