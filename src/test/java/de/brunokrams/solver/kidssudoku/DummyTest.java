@@ -10,11 +10,11 @@ public class DummyTest {
 
     @Test
     void doSomething() {
-        Sudoku start = Sudoku.createFromMatrix(TestDataProvider.validSudoku());
+        KidsSudoku start = KidsSudoku.createFromMatrix(TestDataProvider.validSudoku());
         KidsSudokuNode startingNode = new KidsSudokuNode(start);
-        List<Node<Sudoku>> result  =Dfs.findAllFinalNodes(startingNode, kidsSudoku -> kidsSudoku.isFilled() && kidsSudoku.isValid());
+        List<Node<KidsSudoku>> result  =Dfs.findAllFinalNodes(startingNode, kidsKidsSudoku -> kidsKidsSudoku.isFilled() && kidsKidsSudoku.isValid());
 
-        for (Node<Sudoku> finalNode : result) {
+        for (Node<KidsSudoku> finalNode : result) {
             System.out.println(finalNode.getState());
         }
     }

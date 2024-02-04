@@ -4,7 +4,7 @@ package de.brunokrams.solver.kidssudoku;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sudoku {
+public class KidsSudoku {
 
     private static final int ROW_NUMBER = 6;
     private static final int COLUMN_NUMBER = 6;
@@ -21,10 +21,10 @@ public class Sudoku {
 
     private List<Area> allAreas;
 
-    private Sudoku() {
+    private KidsSudoku() {
     }
 
-    public static Sudoku createFromMatrix(Integer[][] matrix) {
+    public static KidsSudoku createFromMatrix(Integer[][] matrix) {
         if (matrix.length != ROW_NUMBER) {
             throw new IllegalArgumentException();
         }
@@ -34,9 +34,9 @@ public class Sudoku {
             }
         }
 
-        Sudoku sudoku = new Sudoku();
-        sudoku.cells = new Cell[ROW_NUMBER][COLUMN_NUMBER];
-        sudoku.allAreas = new ArrayList<>();
+        KidsSudoku kidsSudoku = new KidsSudoku();
+        kidsSudoku.cells = new Cell[ROW_NUMBER][COLUMN_NUMBER];
+        kidsSudoku.allAreas = new ArrayList<>();
 
         List[] rows = new List[ROW_NUMBER];
         List[] columns = new List[COLUMN_NUMBER];
@@ -57,7 +57,7 @@ public class Sudoku {
         for (int row = 0; row < ROW_NUMBER; row++) {
             for (int column = 0; column < COLUMN_NUMBER; column++) {
                 Cell cell = new Cell(matrix[row][column]);
-                sudoku.cells[row][column] = new Cell(matrix[row][column]);
+                kidsSudoku.cells[row][column] = new Cell(matrix[row][column]);
                 rows[row].add(cell);
                 columns[column].add(cell);
                 rectangles[row * RECTANGLES_ROW_NUMBER / ROW_NUMBER][column * RECTANGLES_COLUMN_NUMBER / COLUMN_NUMBER].add(cell);
@@ -66,24 +66,24 @@ public class Sudoku {
 
         for (int i = 0; i < ROW_NUMBER; i++) {
             Area row = Area.createArea(rows[i]);
-            sudoku.rows[i] = row;
-            sudoku.allAreas.add(row);
+            kidsSudoku.rows[i] = row;
+            kidsSudoku.allAreas.add(row);
         }
         for (int i = 0; i < COLUMN_NUMBER; i++) {
             Area column = Area.createArea(columns[i]);
-            sudoku.columns[i] = column;
-            sudoku.allAreas.add(column);
+            kidsSudoku.columns[i] = column;
+            kidsSudoku.allAreas.add(column);
 
         }
         for (int i = 0; i < RECTANGLES_ROW_NUMBER; i++) {
             for (int j = 0; j < RECTANGLES_COLUMN_NUMBER; j++) {
                 Area rectangle = Area.createArea(rectangles[i][j]);
-                sudoku.rectangles[i][j] = rectangle;
-                sudoku.allAreas.add(rectangle);
+                kidsSudoku.rectangles[i][j] = rectangle;
+                kidsSudoku.allAreas.add(rectangle);
             }
         }
 
-        return sudoku;
+        return kidsSudoku;
     }
 
     public boolean isFilled() {

@@ -5,15 +5,15 @@ import de.brunokrams.solver.common.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KidsSudokuNode extends Node<Sudoku> {
+public class KidsSudokuNode extends Node<KidsSudoku> {
 
-    public KidsSudokuNode(Sudoku state) {
+    public KidsSudokuNode(KidsSudoku state) {
         super(state);
     }
 
     @Override
-    public List<Node<Sudoku>> getAdjacentNodes() {
-        List<Node<Sudoku>> result = new ArrayList<>();
+    public List<Node<KidsSudoku>> getAdjacentNodes() {
+        List<Node<KidsSudoku>> result = new ArrayList<>();
         Integer[][] sudokuAsIntegerMatrix = getState().toIntegerArray();
         for (int row = 0; row < sudokuAsIntegerMatrix.length; row++) {
             for (int column = 0; column < sudokuAsIntegerMatrix[row].length; column++) {
@@ -21,9 +21,9 @@ public class KidsSudokuNode extends Node<Sudoku> {
                     for (int i = 1; i <= 6; i++) {
                         Integer[][] next = sudokuAsIntegerMatrix.clone();
                         next[row][column] = i;
-                        Sudoku nextKidsSudoku = Sudoku.createFromMatrix(next);
-                        if (nextKidsSudoku.isValid()) {
-                            result.add(new KidsSudokuNode(nextKidsSudoku)
+                        KidsSudoku nextKidsKidsSudoku = KidsSudoku.createFromMatrix(next);
+                        if (nextKidsKidsSudoku.isValid()) {
+                            result.add(new KidsSudokuNode(nextKidsKidsSudoku)
                             );
                         }
                     }

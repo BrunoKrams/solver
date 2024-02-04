@@ -14,13 +14,13 @@ class KidsSudokuTest {
         testMatrix[1][0] = 2;
 
         // when/then
-        assertThrows(IllegalArgumentException.class, () -> Sudoku.createFromMatrix(testMatrix));
+        assertThrows(IllegalArgumentException.class, () -> KidsSudoku.createFromMatrix(testMatrix));
     }
 
     @Test
     void isValid_returnsTrue_whenSudokuIsCreatedWithValidMatrix() {
         // given
-        Sudoku kidsSudoku = Sudoku.createFromMatrix(TestDataProvider.validSudoku());
+        KidsSudoku kidsSudoku = KidsSudoku.createFromMatrix(TestDataProvider.validSudoku());
 
         // when
         boolean isValid = kidsSudoku.isValid();
@@ -32,7 +32,7 @@ class KidsSudokuTest {
     @Test
     void isValid_returnsFalse_whenSudokuIsCreatedWithInvalidMatrix() {
         // given
-        Sudoku kidsSudoku = Sudoku.createFromMatrix(TestDataProvider.invalidSudoku());
+        KidsSudoku kidsSudoku = KidsSudoku.createFromMatrix(TestDataProvider.invalidSudoku());
 
         // when
         boolean isValid = kidsSudoku.isValid();
