@@ -1,1 +1,1 @@
-A tool to solve riddles by graph algorithms.
+A tool to solve riddles (for example peg solitaire) by graph algorithms.
